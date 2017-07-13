@@ -1,6 +1,6 @@
 var path = require('path');
 module.exports ={
-	entry: './app/js/main',
+	entry: ['./node_modules/angular/angular.js','./app/js/main'],
 	output:{
 		filename:'bundle.js',
 		path:'dist'
@@ -26,5 +26,8 @@ module.exports ={
 				loader:'file-loader?name=fonts/[name].woff2'
 			}
 		]
+	},
+	resolve:{
+		modules:['../../node_modules']  //so we can use `import angular from 'angular'`
 	}
 }
