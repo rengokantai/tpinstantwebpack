@@ -3,7 +3,7 @@ let webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
-module.exports ={
+module.exports =webpackMerge(baseConfig,{
 
 	module:{
 		rules:[
@@ -24,4 +24,4 @@ module.exports ={
 			}
 ]
 	},devtool:'eval'
-}
+})

@@ -18,7 +18,8 @@
     "webpack-merge": "^4.1.0"
   },
   "scripts": {
-    "build": "webpack --config config/webpack.config.js"
+    "build:dev": "webpack --env=dev --config config/webpack.config.js",
+    "build:prod": "webpack --env=prod --config config/webpack.config.js"
   },
   "repository": {
     "type": "git",
