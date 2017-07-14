@@ -1,4 +1,5 @@
 let webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports ={
 	entry: {
 		vendor:['./node_modules/angular/angular'],
@@ -13,6 +14,9 @@ module.exports ={
 			{
 				test:/\.woff2$/,
 				loader:'file-loader?name=fonts/[name].woff2'
+			},{
+				test:/\.html$/,
+				loader: 'html-loader'
 			}
 		]
 	},
@@ -22,6 +26,9 @@ module.exports ={
 	plugins:[
 		new webpack.optimize.CommonsChunkPlugin({
 			name:'vendor'
+		}),
+		new HtmlWebpackPlugin({
+			template:'./app/index.html'
 		})
 	]
 }

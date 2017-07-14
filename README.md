@@ -29,3 +29,8 @@ npm install --save-dev uglify-js@github:mishoo/UglifyJS2#harmony
 npm install --save-dev webpack-merge
 ```
 
+
+### 3.2
+```
+npm install --save-dev html-webpack-plugin html-loader
+```
