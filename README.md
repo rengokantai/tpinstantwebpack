@@ -7,3 +7,14 @@
 npm install --save-dev node-sass sass-loader css-loader style-loader file-loader
 ```
 
+
+```
+npm install --save-dev extract-text-webpack-plugin
+```
+
+
+### 2.4 plugins
+dont not use extract-text-webpack-plugin version 3 and webpack version2. It will cause an error.
+```
+npm install extract-text-webpack-plugin@2.0.0 --save-dev
+```
