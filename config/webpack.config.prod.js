@@ -1,18 +1,12 @@
 var path = require('path');
 let webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-module.exports ={
-	entry: {
-		vendor:['./node_modules/angular/angular'],
-		bundle:['./app/js/main']
-	},
-	output:{
-		filename:'[name].js',
-		path:'dist'
-	},
+const webpackMerge = require('webpack-merge');
+const baseConfig = require('./webpack.config.base');
+module.exports = {
 	module:{
 		rules:[
-			{
+					{
 				test:/\.scss$/,
 				include: [
                 path.resolve(__dirname, '../app/scss')
@@ -28,21 +22,14 @@ module.exports ={
 					}
 				}]
 			})
-			},
-			{
-				test:/\.woff2$/,
-				loader:'file-loader?name=fonts/[name].woff2'
 			}
 		]
 	},
-	resolve:{
-		modules:['../../node_modules']  //so we can use `import angular from 'angular'`
-	},
 	devtool:'source-map',
 	plugins:[
-		new webpack.optimize.CommonsChunkPlugin({
-			name:'vendor'
-		}),
-		new ExtractTextPlugin('styles.css')
+		new ExtractTextPlugin('styles.css'),
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap:true
+		})
 	]
 }
