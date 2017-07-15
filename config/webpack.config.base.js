@@ -5,10 +5,7 @@ module.exports ={
 		vendor:['./node_modules/angular/angular'],
 		bundle:['./app/js/main']
 	},
-	output:{
-		filename:'[name].js',
-		path:'dist'
-	},
+
 	module:{
 		rules:[
 			{

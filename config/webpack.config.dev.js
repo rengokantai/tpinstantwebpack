@@ -4,7 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 module.exports =webpackMerge(baseConfig,{
-
+	output:{
+		filename:'[name].js',
+		path:'dist'
+	},
 	module:{
 		rules:[
 			{

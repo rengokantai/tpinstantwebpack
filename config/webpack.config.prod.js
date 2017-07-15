@@ -4,6 +4,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 module.exports = webpackMerge(baseConfig,{
+		output:{
+		filename:'[name].[chunkhash].js',
+		path:'dist'
+	},
 	module:{
 		rules:[
 					{
@@ -27,7 +31,7 @@ module.exports = webpackMerge(baseConfig,{
 	},
 	devtool:'source-map',
 	plugins:[
-		new ExtractTextPlugin('styles.css'),
+		new ExtractTextPlugin('styles.[contenthash].css'),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap:true
 		})
