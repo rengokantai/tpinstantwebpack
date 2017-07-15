@@ -28,7 +28,11 @@ module.exports ={
 			name:'vendor'
 		}),
 		new HtmlWebpackPlugin({
-			template:'./app/index.html'
+			template:'./app/index.html',
+			favicon: './app/favicon.png',
+			minify:{
+				removeScriptTypeAttributes:true
+			}
 		})
 	]
 }
