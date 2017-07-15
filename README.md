@@ -34,3 +34,13 @@ npm install --save-dev webpack-merge
 ```
 npm install --save-dev html-webpack-plugin html-loader
 ```
+
+### 3.3
+```
+npm install --save-dev chunk-manifest-webpack-plugin
+```
+
+### 3.4
+```
+npm install --save-dev clean-webpack-plugin
+```

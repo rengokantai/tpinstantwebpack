@@ -1,6 +1,7 @@
 var path = require('path');
 let webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 module.exports = webpackMerge(baseConfig,{
@@ -34,6 +35,9 @@ module.exports = webpackMerge(baseConfig,{
 		new ExtractTextPlugin('styles.[contenthash].css'),
 		new webpack.optimize.UglifyJsPlugin({
 			sourceMap:true
+		}),
+		new ChunkManifestPlugin({
+			filename:'chunk-manifest.json'
 		})
 	]
 })

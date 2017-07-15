@@ -1,5 +1,6 @@
 let webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports ={
 	entry: {
 		vendor:['./node_modules/angular/angular'],
@@ -22,7 +23,7 @@ module.exports ={
 	},
 	plugins:[
 		new webpack.optimize.CommonsChunkPlugin({
-			name:'vendor'
+			name:['vendor','manifest']
 		}),
 		new HtmlWebpackPlugin({
 			template:'./app/index.html',
@@ -30,6 +31,9 @@ module.exports ={
 			minify:{
 				removeScriptTypeAttributes:true
 			}
+		}),
+		new CleanWebpackPlugin(['./dist'],{
+			root:__dirname+'/..'
 		})
 	]
 }
