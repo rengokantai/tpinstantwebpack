@@ -8,7 +8,10 @@ module.exports ={
 	},
 
 	module:{
-		rules:[
+		rules:[{
+				test:/\.js$/,
+				loader:'eslint-loader'
+			},
 			{
 				test:/\.woff2$/,
 				loader:'file-loader?name=fonts/[name].woff2'

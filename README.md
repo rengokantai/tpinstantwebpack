@@ -42,5 +42,6 @@ npm install --save-dev chunk-manifest-webpack-plugin
 
 ### 3.4
 ```
-npm install --save-dev clean-webpack-plugin
+npm install --save-dev clean-webpack-plugin eslint-loader eslint
 ```
+Need to install eslint!
