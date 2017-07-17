@@ -45,3 +45,16 @@ npm install --save-dev chunk-manifest-webpack-plugin
 npm install --save-dev clean-webpack-plugin eslint-loader eslint
 ```
 Need to install eslint!
+
+### 3.5
+```
+npm install --save-dev webpack-dev-server
+```
+in webpack.config.dev.js, webpack-dev-server needs absolute path. change
+```
+path: 'dist'
+```
+to
+```
+path: __dirname+'dist'
+```

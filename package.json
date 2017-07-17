@@ -21,10 +21,11 @@
     "style-loader": "^0.18.2",
     "uglify-es": "^3.0.24",
     "webpack": "2.2.1",
+    "webpack-dev-server": "^2.5.1",
     "webpack-merge": "^4.1.0"
   },
   "scripts": {
-    "build:dev": "webpack --env=dev --config config/webpack.config.js",
+    "build:dev": "webpack-dev-server --open --env=dev --config config/webpack.config.js",
     "build:prod": "webpack --env=prod --config config/webpack.config.js"
   },
   "repository": {
