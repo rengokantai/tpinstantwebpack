@@ -3,6 +3,7 @@ let webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
+const devServer = require('webpack-dev-server');
 module.exports =webpackMerge(baseConfig,{
 	output:{
 		filename:'[name].js',
@@ -27,4 +28,7 @@ module.exports =webpackMerge(baseConfig,{
 			}
 ]
 	},devtool:'eval'
+	devServer:{
+		port:1337
+	}
 })

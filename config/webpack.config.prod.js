@@ -34,7 +34,10 @@ module.exports = webpackMerge(baseConfig,{
 	plugins:[
 		new ExtractTextPlugin('styles.[contenthash].css'),
 		new webpack.optimize.UglifyJsPlugin({
-			sourceMap:true
+			sourceMap:true,
+			compress:{
+				drop_console:true
+			}
 		}),
 		new ChunkManifestPlugin({
 			filename:'chunk-manifest.json'
